@@ -1,0 +1,11 @@
+{
+    "parameters": {
+      "storageAccountName": {
+        "value": "testarmideas2it"
+      },
+      "location": {
+        "value": "eastus"
+      }
+    }
+  }
+  
