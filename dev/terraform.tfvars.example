@@ -1,0 +1,43 @@
+# Resource Group Configuration
+resource_group_name = "rg-azure-training-dev"
+location            = "East US"
+environment         = "dev"
+project_name        = "azure-training"
+
+# Tags
+tags = {
+  Owner       = "DevOps Team"
+  CostCenter  = "Training"
+  Application = "Azure Training"
+}
+
+# VNet Configuration
+vnet_address_space = ["10.0.0.0/16"]
+
+subnets = {
+  subnet1 = {
+    address_prefixes = ["10.0.1.0/24"]
+    service_endpoints = []
+  }
+  subnet2 = {
+    address_prefixes = ["10.0.2.0/24"]
+    service_endpoints = []
+  }
+}
+
+# Storage Account
+storage_account = {
+  name                     = "stdevtraining001" # must be globally unique
+  account_replication_type = "LRS"
+  static_website = {
+    index_document = "index.html"
+    error_document = "index.html"
+  }
+}
+
+storage_containers = {
+  appassets = {
+    access_type = "blob" # public read for blobs
+  }
+}
+
